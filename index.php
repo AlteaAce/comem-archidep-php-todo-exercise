@@ -53,7 +53,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $deleteQuery = ""; // suppression de l'élément suivant l'idée -> DELETE FROM todo WHERE id = $id;
+        $deleteQuery = "DELETE FROM todo WHERE id = $id;"; // suppression de l'élément suivant l'idée ;
         if(!$db->query($deleteQuery)) {
           die(print_r($db->errorInfo(), true));
         }
